@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=__NAME__
+Comment=Launch __NAME__ Browser
+Exec=__EXEC__
+Icon=__ICON__
+Terminal=false
+Categories=Network;WebBrowser;
+StartupNotify=true

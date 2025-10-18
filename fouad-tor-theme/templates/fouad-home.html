@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>__TITLE__</title>
+<style>
+  :root{ --accent: #00ff7f; --bg:#070b08; --fg:#d8fbd8 }
+  html,body{ height:100%; margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 "JetBrains Mono","Fira Code",monospace }
+  .stage{ position:relative; min-height:100%; overflow:hidden; display:flex; align-items:center; justify-content:center; padding:32px }
+  .grid::before,.grid::after{ content:""; position:absolute; inset:-10%; pointer-events:none; z-index:0; background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(0,255,127,.08), transparent 60%),
+    radial-gradient(1000px 500px at 110% 120%, rgba(0,255,127,.06), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(0,255,127,.05) 0 2px, transparent 2px 60px),
+    repeating-linear-gradient(90deg, rgba(0,255,127,.05) 0 2px, transparent 2px 60px);
+    animation: drift 24s linear infinite; }
+  .grid::after{ filter: blur(8px); opacity:.6 }
+  @keyframes drift{ from{ transform:translate3d(0,0,0) } to{ transform:translate3d(-60px,-60px,0) } }
+  .card{ position:relative; z-index:1; width:min(920px,92vw); padding:28px 28px 22px; border:1px solid rgba(0,255,127,.3); border-radius:12px; background:rgba(5,8,6,.6); box-shadow:0 0 24px rgba(0,255,127,.15) inset, 0 0 28px rgba(0,255,127,.25) }
+  .banner{ display:flex; align-items:center; gap:14px; margin-bottom:10px }
+  .logo{ width:44px; height:44px; border-radius:50%; background:url("__ICON_URI__") center/cover no-repeat; box-shadow:0 0 10px rgba(0,255,127,.7); animation:pulse 2.6s ease-in-out infinite }
+  @keyframes pulse{ 0%,100%{ filter:drop-shadow(0 0 2px rgba(0,255,127,.5)) } 50%{ filter:drop-shadow(0 0 12px rgba(0,255,127,.9)) } }
+  h1{ margin:0; font-size:22px; letter-spacing:.12em; text-shadow:0 0 8px rgba(0,255,127,.7) }
+  .body{ margin-top:8px }
+  .actions{ margin-top:18px; display:flex; gap:10px; flex-wrap:wrap }
+  .btn{ padding:10px 14px; border:1px solid rgba(0,255,127,.5); color:var(--fg); text-decoration:none; border-radius:8px; background:rgba(0,0,0,.3) }
+  .btn:hover{ box-shadow:0 0 16px rgba(0,255,127,.35) }
+  .note{ opacity:.9; margin-top:8px; font-size:14px }
+</style>
+</head>
+<body>
+  <div class="stage grid">
+    <div class="card">
+      <div class="banner">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>__TITLE__ 👾</h1>
+      </div>
+      <div class="body">
+        <p>Welcome to your hacker-styled private browser. Launch into the net with stealth and style. 🚀</p>
+        <div class="actions">
+          <a class="btn" href="https://check.torproject.org/">Tor Check</a>
+          <a class="btn" href="https://duckduckgo.com/">Search</a>
+          <a class="btn" href="about:preferences">Preferences</a>
+        </div>
+        <div class="note">Tip: Customize colors, logo, or links anytime.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

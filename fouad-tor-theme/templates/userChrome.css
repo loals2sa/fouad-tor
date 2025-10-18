@@ -1,0 +1,33 @@
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+  :root {
+    --fouad-accent: __ACCENT__;
+    --toolbar-bg: #0b0f0c;
+    --toolbar-fg: #d8fbd8;
+  }
+  #navigator-toolbox, #TabsToolbar, #nav-bar, #PersonalToolbar {
+    background-color: var(--toolbar-bg) !important;
+    color: var(--toolbar-fg) !important;
+    text-shadow: 0 0 6px color-mix(in srgb, __ACCENT__ 50%, transparent);
+    font-family: "JetBrains Mono", "Fira Code", monospace !important;
+  }
+  #nav-bar {
+    position: relative;
+    box-shadow: 0 0 18px color-mix(in srgb, __ACCENT__ 25%, transparent) inset,
+                0 0 12px color-mix(in srgb, __ACCENT__ 25%, transparent);
+  }
+  toolbarbutton, .toolbarbutton-text, .urlbar-input {
+    color: var(--toolbar-fg) !important;
+  }
+  .tabbrowser-tab[selected] .tab-background {
+    box-shadow: 0 0 0 1px var(--fouad-accent) inset,
+                0 0 18px color-mix(in srgb, __ACCENT__ 35%, transparent) !important;
+  }
+  .tab-label::after {
+    content: " 👾";
+    opacity: 0.9;
+  }
+  #urlbar[focused="true"] {
+    box-shadow: 0 0 0 1px var(--fouad-accent) inset,
+                0 0 14px color-mix(in srgb, __ACCENT__ 35%, transparent) !important;
+  }
+}
